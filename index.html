@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Select Your Region - KoreanLearnin</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  height: -webkit-fill-available;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', Roboto, Arial, sans-serif;
+  background: url('https://cdn.shopify.com/s/files/1/0674/6747/7282/files/sky.png?v=1750990355') repeat;
+  background-size: auto;
+  min-height: 100vh;
+  min-height: 100dvh;
+  min-height: -webkit-fill-available;
+  color: #333;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* Logo */
+.logo-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  max-width: 280px;
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+
+@media (max-width: 480px) {
+  .logo {
+    max-width: 220px;
+  }
+}
+
+/* Page Title */
+.page-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 24px;
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+  text-shadow:
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    2px 2px 0 #000,
+    -2px 0 0 #000,
+    2px 0 0 #000,
+    0 -2px 0 #000,
+    0 2px 0 #000,
+    0 0 20px rgba(65, 192, 255, 0.5);
+}
+
+@media (max-width: 480px) {
+  .page-title {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+}
+
+.subtitle-main {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 14px;
+  color: #ffd700;
+  text-align: center;
+  margin-bottom: 16px;
+  text-shadow:
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    2px 2px 0 #000,
+    -2px 0 0 #000,
+    2px 0 0 #000,
+    0 -2px 0 #000,
+    0 2px 0 #000;
+}
+
+.subtitle-sub {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+@media (max-width: 480px) {
+  .subtitle-main {
+    font-size: 11px;
+  }
+  .subtitle-sub {
+    font-size: 8px;
+  }
+}
+
+/* Buttons */
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.region-btn {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 16px;
+  color: #fff;
+  background: linear-gradient(180deg, #41c0ff 0%, #1a8fcc 50%, #0d6fa0 100%);
+  border: 3px solid #6dd4ff;
+  border-radius: 14px;
+  padding: 22px 48px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow:
+    0 6px 0 #095a82,
+    0 8px 20px rgba(0, 0, 0, 0.4),
+    0 0 25px rgba(65, 192, 255, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+  position: relative;
+  top: 0;
+  line-height: 1.5;
+  text-decoration: none;
+  display: inline-block;
+  min-width: 340px;
+  text-align: center;
+}
+
+.region-btn:hover {
+  background: linear-gradient(180deg, #5dd0ff 0%, #2aa0dd 50%, #1a80bb 100%);
+  box-shadow:
+    0 6px 0 #095a82,
+    0 8px 20px rgba(0, 0, 0, 0.4),
+    0 0 40px rgba(65, 192, 255, 0.7),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transform: scale(1.03);
+}
+
+.region-btn:active {
+  top: 4px;
+  box-shadow:
+    0 2px 0 #095a82,
+    0 4px 10px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(65, 192, 255, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 520px) {
+  .region-btn {
+    font-size: 11px;
+    padding: 18px 24px;
+    min-width: 280px;
+  }
+}
+
+.btn-red {
+  background: linear-gradient(180deg, #ff4455 0%, #cc1133 50%, #aa0022 100%);
+  border-color: #ff6677;
+  box-shadow:
+    0 6px 0 #880015,
+    0 8px 20px rgba(0, 0, 0, 0.4),
+    0 0 25px rgba(255, 68, 85, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.btn-red:hover {
+  background: linear-gradient(180deg, #ff5566 0%, #dd2244 50%, #bb1133 100%);
+  box-shadow:
+    0 6px 0 #880015,
+    0 8px 20px rgba(0, 0, 0, 0.4),
+    0 0 40px rgba(255, 68, 85, 0.7),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.btn-red:active {
+  box-shadow:
+    0 2px 0 #880015,
+    0 4px 10px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(255, 68, 85, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.btn-yellow {
+  background: linear-gradient(180deg, #ffd700 0%, #ccaa00 50%, #aa8800 100%);
+  border-color: #ffe84d;
+  box-shadow:
+    0 6px 0 #886600,
+    0 8px 20px rgba(0, 0, 0, 0.4),
+    0 0 25px rgba(255, 215, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.btn-yellow:hover {
+  background: linear-gradient(180deg, #ffe033 0%, #ddbb11 50%, #bb9900 100%);
+  box-shadow:
+    0 6px 0 #886600,
+    0 8px 20px rgba(0, 0, 0, 0.4),
+    0 0 40px rgba(255, 215, 0, 0.7),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.btn-yellow:active {
+  box-shadow:
+    0 2px 0 #886600,
+    0 4px 10px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(255, 215, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  margin-top: 60px;
+  padding: 20px;
+}
+
+.footer-text {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+  color: white;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Logo -->
+  <div class="logo-container">
+    <img src="https://cdn.shopify.com/s/files/1/0674/6747/7282/files/logo555.png?v=1757969221" alt="KoreanLearnin" class="logo">
+  </div>
+
+  <!-- Page Title -->
+  <h1 class="page-title">🌍 Select Your Region 🌍</h1>
+
+  <!-- Subtitle -->
+  <p class="subtitle-main">Want our Beginner's Bundle for $9 USD?</p>
+  <p class="subtitle-sub">If you want to directly register for the Class Waitlist, select your time zone below and click the waitlist link in the description.</p>
+
+  <!-- Buttons -->
+  <div class="buttons-container">
+    <a href="https://koreanlearnin.com/products/us-canada-only-koreanlearnin-beginner-bundle-copy?_pos=3&_sid=74d87c510&_ss=r" class="region-btn btn-red">
+      🌎 NORTH AMERICA
+    </a>
+    <a href="https://koreanlearnin.com/products/sea-only-koreanlearnin-beginner-bundle-copy?_pos=1&_sid=74d87c510&_ss=r" class="region-btn btn-yellow">
+      🌍 EUROPE
+    </a>
+    <a href="https://koreanlearnin.com/products/sea-only-koreanlearnin-beginner-bundle?_pos=2&_sid=74d87c510&_ss=r" class="region-btn">
+      🌏 SOUTHEAST ASIA
+    </a>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p class="footer-text">🎮 KoreanLearnin • Learn Korean the Fun Way! 🎮</p>
+  </div>
+
+</div>
+
+</body>
+</html>
