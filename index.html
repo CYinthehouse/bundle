@@ -84,7 +84,7 @@ body {
   font-size: 14px;
   color: #ffd700;
   text-align: center;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
   text-shadow:
     -2px -2px 0 #000,
     2px -2px 0 #000,
@@ -97,19 +97,64 @@ body {
 }
 
 .subtitle-sub {
-  font-family: 'Noto Sans', sans-serif;
-  font-size: 15px;
-  font-weight: 600;
+  display: none;
+}
+
+/* Dropdown */
+.dropdown-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.dropdown-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  width: auto;
+}
+
+.dropdown-menu {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: max-height 0.4s ease, opacity 0.35s ease, transform 0.35s ease, padding 0.4s ease, margin-top 0.4s ease;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-top: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  border: 3px solid #41c0ff;
+  border-radius: 16px;
+  padding: 0 30px;
+  display: flex;
+  pointer-events: none;
+}
+
+.dropdown-menu.open {
+  max-height: 600px;
+  opacity: 1;
+  transform: translateY(0);
+  padding: 24px 30px;
+  margin-top: 20px;
+  pointer-events: all;
+}
+
+.dropdown-label {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 13px;
   color: white;
-  text-align: center;
-  line-height: 1.6;
-  margin-bottom: 40px;
   text-shadow:
     -1px -1px 0 #000,
     1px -1px 0 #000,
     -1px 1px 0 #000,
     1px 1px 0 #000;
 }
+
 
 @media (max-width: 480px) {
   .subtitle-main {
@@ -238,6 +283,33 @@ body {
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
+.btn-blue {
+  background: linear-gradient(180deg, #41c0ff 0%, #1a8fcc 50%, #0d6fa0 100%);
+  border-color: #6dd4ff;
+  box-shadow:
+    0 6px 0 #095a82,
+    0 8px 20px rgba(0, 0, 0, 0.4),
+    0 0 25px rgba(65, 192, 255, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.btn-blue:hover {
+  background: linear-gradient(180deg, #5dd0ff 0%, #2aa0dd 50%, #1a80bb 100%);
+  box-shadow:
+    0 6px 0 #095a82,
+    0 8px 20px rgba(0, 0, 0, 0.4),
+    0 0 40px rgba(65, 192, 255, 0.7),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.btn-blue:active {
+  box-shadow:
+    0 2px 0 #095a82,
+    0 4px 10px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(65, 192, 255, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
 /* Footer */
 .footer {
   text-align: center;
@@ -267,23 +339,52 @@ body {
   </div>
 
   <!-- Page Title -->
-  <h1 class="page-title">🌍 Select Your Region 🌍</h1>
+  <h1 class="page-title">🎮 Welcome to KoreanLearnin! 🎮</h1>
 
   <!-- Subtitle -->
-  <p class="subtitle-main">Want our Beginner's Bundle for $9 USD?</p>
-  <p class="subtitle-sub">If you want to directly register for the Class Waitlist, select your time zone below and click the waitlist link in the description.</p>
+  <p class="subtitle-main">Please select an option below.</p>
 
-  <!-- Buttons -->
+  <!-- Dropdown -->
   <div class="buttons-container">
-    <a href="https://koreanlearnin.com/products/us-canada-only-koreanlearnin-beginner-bundle-copy?_pos=3&_sid=74d87c510&_ss=r" class="region-btn btn-red">
-      🌎 NORTH AMERICA
-    </a>
-    <a href="https://koreanlearnin.com/products/sea-only-koreanlearnin-beginner-bundle-copy?_pos=1&_sid=74d87c510&_ss=r" class="region-btn btn-yellow">
-      🌍 EUROPE
-    </a>
-    <a href="https://koreanlearnin.com/products/sea-only-koreanlearnin-beginner-bundle?_pos=2&_sid=74d87c510&_ss=r" class="region-btn">
-      🌏 SOUTHEAST ASIA
-    </a>
+
+    <!-- Beginner's Bundle Dropdown -->
+    <div class="dropdown-wrapper">
+      <button class="region-btn btn-red dropdown-toggle" onclick="toggleDropdown()">
+        🎁 Beginner's Bundle ($9 USD) ▼
+      </button>
+      <div class="dropdown-menu" id="bundleDropdown">
+        <p class="dropdown-label">🌍 Select Your Region 🌍</p>
+        <a href="https://koreanlearnin.com/products/us-canada-only-koreanlearnin-beginner-bundle-copy?_pos=3&_sid=74d87c510&_ss=r" class="region-btn btn-red">
+          🌎 NORTH AMERICA
+        </a>
+        <a href="https://koreanlearnin.com/products/sea-only-koreanlearnin-beginner-bundle-copy?_pos=1&_sid=74d87c510&_ss=r" class="region-btn btn-yellow">
+          🌍 EUROPE
+        </a>
+        <a href="https://koreanlearnin.com/products/sea-only-koreanlearnin-beginner-bundle?_pos=2&_sid=74d87c510&_ss=r" class="region-btn">
+          🌏 SOUTHEAST ASIA
+        </a>
+      </div>
+    </div>
+
+    <!-- Waitlist Dropdown -->
+    <div class="dropdown-wrapper">
+      <button class="region-btn btn-blue dropdown-toggle-waitlist" onclick="toggleWaitlist()">
+        📋 Paid Class Waitlist ▼
+      </button>
+      <div class="dropdown-menu" id="waitlistDropdown">
+        <p class="dropdown-label">🌍 Select Your Region 🌍</p>
+        <a href="https://github.com/CYinthehouse/reviews" class="region-btn btn-red">
+          🌎 NORTH AMERICA
+        </a>
+        <a href="https://github.com/CYinthehouse/europereviews" class="region-btn btn-yellow">
+          🌍 EUROPE
+        </a>
+        <a href="https://github.com/CYinthehouse/seareviews" class="region-btn">
+          🌏 SOUTHEAST ASIA
+        </a>
+      </div>
+    </div>
+
   </div>
 
   <!-- Footer -->
@@ -293,5 +394,24 @@ body {
 
 </div>
 
+<script>
+function toggleDropdown() {
+  const menu = document.getElementById('bundleDropdown');
+  const btn = document.querySelector('.dropdown-toggle');
+  menu.classList.toggle('open');
+  btn.textContent = menu.classList.contains('open')
+    ? '🎁 Beginner\'s Bundle ($9 USD) ▲'
+    : '🎁 Beginner\'s Bundle ($9 USD) ▼';
+}
+
+function toggleWaitlist() {
+  const menu = document.getElementById('waitlistDropdown');
+  const btn = document.querySelector('.dropdown-toggle-waitlist');
+  menu.classList.toggle('open');
+  btn.textContent = menu.classList.contains('open')
+    ? '📋 Paid Class Waitlist ▲'
+    : '📋 Paid Class Waitlist ▼';
+}
+</script>
 </body>
 </html>
