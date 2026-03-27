@@ -310,6 +310,28 @@ body {
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
+.text-us {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.text-us-link {
+  color: #41c0ff;
+  text-decoration: none;
+}
+
+.text-us-link:hover {
+  text-decoration: underline;
+}
+
 /* Footer */
 .footer {
   text-align: center;
@@ -373,17 +395,20 @@ body {
       </button>
       <div class="dropdown-menu" id="waitlistDropdown">
         <p class="dropdown-label">🌍 Select Your Region 🌍</p>
-        <a href="https://github.com/CYinthehouse/reviews" class="region-btn btn-red">
+        <a href="https://cyinthehouse.github.io/reviews/" class="region-btn btn-red">
           🌎 US/CANADA
         </a>
-        <a href="https://github.com/CYinthehouse/europereviews" class="region-btn btn-yellow">
+        <a href="https://cyinthehouse.github.io/europereviews/" class="region-btn btn-yellow">
           🌍 EUROPE
         </a>
-        <a href="https://github.com/CYinthehouse/seareviews" class="region-btn">
+        <a href="https://cyinthehouse.github.io/seareviews/" class="region-btn">
           🌏 SOUTHEAST ASIA
         </a>
       </div>
     </div>
+
+    <!-- Text Us -->
+    <p class="text-us">Or text us for our paid class information at: <a href="sms:+13474809858" class="text-us-link">+1 (347) 480-9858</a></p>
 
   </div>
 
