@@ -372,36 +372,14 @@ body {
     <!-- Beginner's Bundle Dropdown -->
     <div class="dropdown-wrapper">
       <button class="region-btn btn-red dropdown-toggle" onclick="toggleDropdown()">
-        🎁 Beginner's Bundle ($9 USD) ▼
+        🎁 Beginner's Bundle ($57 USD) ▼
       </button>
       <div class="dropdown-menu" id="bundleDropdown">
         <p class="dropdown-label">🌍 Select Your Region 🌍</p>
         <a href="https://koreanlearnin.com/products/us-canada-only-koreanlearnin-beginner-bundle-copy?_pos=3&_sid=74d87c510&_ss=r" class="region-btn btn-red">
-          🌎 US/CANADA
-        </a>
-        <a href="https://koreanlearnin.com/products/sea-only-koreanlearnin-beginner-bundle-copy?_pos=1&_sid=74d87c510&_ss=r" class="region-btn btn-yellow">
-          🌍 EUROPE
+          🌎 US / CANADA / EUROPE
         </a>
         <a href="https://koreanlearnin.com/products/sea-only-koreanlearnin-beginner-bundle?_pos=2&_sid=74d87c510&_ss=r" class="region-btn">
-          🌏 SOUTHEAST ASIA
-        </a>
-      </div>
-    </div>
-
-    <!-- Waitlist Dropdown -->
-    <div class="dropdown-wrapper">
-      <button class="region-btn btn-blue dropdown-toggle-waitlist" onclick="toggleWaitlist()">
-        📋 Paid Class Waitlist ▼
-      </button>
-      <div class="dropdown-menu" id="waitlistDropdown">
-        <p class="dropdown-label">🌍 Select Your Region 🌍</p>
-        <a href="https://cyinthehouse.github.io/reviews/" class="region-btn btn-red">
-          🌎 US/CANADA
-        </a>
-        <a href="https://cyinthehouse.github.io/europereviews/" class="region-btn btn-yellow">
-          🌍 EUROPE
-        </a>
-        <a href="https://cyinthehouse.github.io/seareviews/" class="region-btn">
           🌏 SOUTHEAST ASIA
         </a>
       </div>
@@ -425,18 +403,10 @@ function toggleDropdown() {
   const btn = document.querySelector('.dropdown-toggle');
   menu.classList.toggle('open');
   btn.textContent = menu.classList.contains('open')
-    ? '🎁 Beginner\'s Bundle ($9 USD) ▲'
-    : '🎁 Beginner\'s Bundle ($9 USD) ▼';
+    ? '🎁 Beginner\'s Bundle ($57 USD) ▲'
+    : '🎁 Beginner\'s Bundle ($57 USD) ▼';
 }
 
-function toggleWaitlist() {
-  const menu = document.getElementById('waitlistDropdown');
-  const btn = document.querySelector('.dropdown-toggle-waitlist');
-  menu.classList.toggle('open');
-  btn.textContent = menu.classList.contains('open')
-    ? '📋 Paid Class Waitlist ▲'
-    : '📋 Paid Class Waitlist ▼';
-}
 </script>
 </body>
 </html>
